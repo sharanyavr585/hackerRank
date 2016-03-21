@@ -37,20 +37,24 @@ public class Solution {
                 }
                 
             }
-                int count=0;
-                for(char key : map2.keySet()){
-                   if(map1.containsKey(key)){
-                       if(map2.get(key)!=map1.get(key)){
-                           int diff = map2.get(key)-map1.get(key);
+            int count=0;
+            for(char key : map2.keySet())
+            {
+                if(map1.containsKey(key))
+                {
+                    if(map2.get(key)!=map1.get(key))
+                    {
+                        int diff = map2.get(key)-map1.get(key);
                            if (diff > 0)
                                count=count+ diff;
-                       }
-                   } 
+                    }
+                } 
                     else
                         count=count+map2.get(key);
-                }
-                System.out.println(count);
-        }
+            }
+           System.out.println(count);
+            }
+            
             else
                  System.out.println(-1);
             
