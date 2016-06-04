@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int t= in.nextInt();
+        in.nextLine();
+        for(int n=0;n<t;n++){
+            String A=in.nextLine();
+            String B=in.nextLine();
+           
+            int letters[]=new int[26];
+            boolean k=false;
+            
+            for(int i=0;i<A.length();i++){
+               letters[A.charAt(i)-'a']++;
+            }
+            for(int j=0;j<B.length();j++){
+                if(letters[B.charAt(j)-'a']>0){
+                    System.out.println("YES");
+                    k=true;
+                    break;
+                }
+            }
+            
+            if(!k){
+                System.out.println("NO");
+            }
+            
+            
+ 
+           
+        }
+    }
+}
