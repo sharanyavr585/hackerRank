@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+       Scanner in = new Scanner(System.in);
+       int t=in.nextInt();
+       in.nextLine();
+       for(int n=0;n<t;n++){
+           String s = in.nextLine();
+           int a[]=new int[26];
+           
+           int l=s.length();
+           if(l%2!=0){
+               System.out.println(-1);
+           } else {
+           for(int i=0;i<l/2;i++){
+               a[s.charAt(i)-'a']++;
+           }
+           
+           for(int i=l/2; i<l;i++){
+               if(a[s.charAt(i)-'a']>0){
+                a[s.charAt(i)-'a']--;   
+               }
+           }
+           int sum=0;
+           for(int i=0;i<26;i++){
+               sum=sum+a[i];
+           }
+           System.out.println(sum);
+           }
+       }
+       
+        
+       
+    }
+}
