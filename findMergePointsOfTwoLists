@@ -1,0 +1,49 @@
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+int FindMergeNode(Node headA, Node headB) {
+    // Complete this function
+    // Do not write the main method. 
+    
+ Node currentA=headA;
+ Node currentB=headB;   
+ int lenA=0;
+ int lenB=0;  
+    while(currentA!=null){
+        currentA=currentA.next;
+        lenA++;
+       }
+    currentA=headA;
+    
+    while(currentB!=null){
+        currentB=currentB.next;
+        lenB++;
+    }
+    currentB=headB;
+    
+    
+   while(lenA<lenB){
+       currentB=currentB.next;
+       headB=currentB;
+       lenB--;
+   }
+ 
+    
+   while(lenB<lenA){
+       currentA=currentA.next;
+       headA=currentA;
+       lenA--;
+   }
+    
+ while(currentA!=null && currentB!=null && currentA.data!=currentB.data){
+     currentA=currentA.next;
+     currentB=currentB.next;
+ }
+ return currentA.data;
+}
